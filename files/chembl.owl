@@ -1,0 +1,2157 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/mariano/ontologies/2013/7/untitled-ontology-54#"
+     xml:base="http://www.semanticweb.org/mariano/ontologies/2013/7/untitled-ontology-54"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mariano/ontologies/2013/7/untitled-ontology-54"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#ref-molregno -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#ref-molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/binding_sites#ref-tid -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/binding_sites#ref-tid"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutic_components#ref-molregno_component_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutic_components#ref-molregno_component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutics#ref-molregno -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutics#ref-molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_class#ref-component_id_protein_class_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/component_class#ref-component_id_protein_class_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains#ref-domain_id_component_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/component_domains#ref-domain_id_component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_synonyms#ref-component_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/component_synonyms#ref-component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#ref-molregno -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#ref-molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#ref-molregno_doc_id_src_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/compound_records#ref-molregno_doc_id_src_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#ref-molregno -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#ref-molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#ref-atc_code -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#ref-atc_code"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#ref-chembl_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/docs#ref-chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#ref-product_id_record_id_molregno -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/formulations#ref-product_id_record_id_molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff#ref-activity_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/ligand_eff#ref-activity_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#ref-chembl_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#ref-chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_hierarchy#ref-molregno_parent_molregno_active_molregno -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/molecule_hierarchy#ref-molregno_parent_molregno_active_molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms#ref-molregno_res_stem_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/molecule_synonyms#ref-molregno_res_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains#ref-activity_id_site_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains#ref-activity_id_site_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies#ref-res_stem_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/research_companies#ref-res_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components#ref-site_id_component_id_domain_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/site_components#ref-site_id_component_id_domain_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_components#ref-tid_component_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/target_components#ref-tid_component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#ref-target_type_chembl_id -->
+
+    <owl:ObjectProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#ref-target_type_chembl_id"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#activity_comment -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#activity_comment"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#activity_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#activity_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#assay_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#assay_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#data_validity_comment -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#data_validity_comment"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#doc_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#doc_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#pchembl_value -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#pchembl_value"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#potential_duplicate -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#potential_duplicate"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#published_relation -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#published_relation"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#published_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#published_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#published_units -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#published_units"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#published_value -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#published_value"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#record_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#record_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#standard_flag -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#standard_flag"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#standard_relation -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#standard_relation"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#standard_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#standard_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#standard_units -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#standard_units"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities#standard_value -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activities#standard_value"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup#definition -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup#definition"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup#normal_range_max -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup#normal_range_max"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup#normal_range_min -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup#normal_range_min"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup#standard_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup#standard_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup#standard_units -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup#standard_units"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup#std_act_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup#std_act_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assay_type#assay_desc -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assay_type#assay_desc"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assay_type#assay_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assay_type#assay_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_category -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_category"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_cell_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_cell_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_organism -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_organism"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_strain -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_strain"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_subcellular_fraction -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_subcellular_fraction"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_tax_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_tax_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_test_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_test_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_tissue -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_tissue"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#assay_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#assay_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#chembl_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#confidence_score -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#confidence_score"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#curated_by -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#curated_by"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#doc_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#doc_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#relationship_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#relationship_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#src_assay_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#src_assay_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#src_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#src_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays#tid -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/assays#tid"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level1 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level1"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level1_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level1_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level2 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level2"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level2_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level2_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level3 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level3"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level3_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level3_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level4 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level4"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level4_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level4_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#level5 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#level5"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#who_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#who_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification#who_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/atc_classification#who_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/binding_sites#site_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/binding_sites#site_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/binding_sites#site_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/binding_sites#site_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/binding_sites#tid -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/binding_sites#tid"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#component_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#component_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#organism -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#organism"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#sequence -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#sequence"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#sequence_md5sum -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#sequence_md5sum"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences#tax_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/bio_component_sequences#tax_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutic_components#biocomp_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutic_components#biocomp_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutic_components#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutic_components#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutic_components#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutic_components#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutics#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutics#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutics#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/biotherapeutics#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary#cell_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/cell_dictionary#cell_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary#cell_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/cell_dictionary#cell_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary#cell_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/cell_dictionary#cell_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary#cell_source_organism -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/cell_dictionary#cell_source_organism"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary#cell_source_tax_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/cell_dictionary#cell_source_tax_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary#cell_source_tissue -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/cell_dictionary#cell_source_tissue"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/chembl_id_lookup#chembl_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/chembl_id_lookup#chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/chembl_id_lookup#entity_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/chembl_id_lookup#entity_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/chembl_id_lookup#entity_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/chembl_id_lookup#entity_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/chembl_id_lookup#status -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/chembl_id_lookup#status"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_class#comp_class_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_class#comp_class_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_class#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_class#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_class#protein_class_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_class#protein_class_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains#compd_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_domains#compd_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_domains#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains#domain_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_domains#domain_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains#end_position -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_domains#end_position"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains#start_position -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_domains#start_position"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#accession -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#accession"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#component_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#component_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#db_source -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#db_source"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#db_version -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#db_version"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#organism -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#organism"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#sequence -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#sequence"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#sequence_md5sum -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#sequence_md5sum"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences#tax_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_sequences#tax_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_synonyms#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_synonyms#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_synonyms#component_synonym -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_synonyms#component_synonym"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_synonyms#compsyn_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_synonyms#compsyn_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_synonyms#syn_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/component_synonyms#syn_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#acd_logd -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#acd_logd"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#acd_logp -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#acd_logp"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#acd_most_apka -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#acd_most_apka"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#acd_most_bpka -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#acd_most_bpka"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#alogp -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#alogp"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#aromatic_rings -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#aromatic_rings"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#full_mwt -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#full_mwt"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#hba -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#hba"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#hbd -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#hbd"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#heavy_atoms -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#heavy_atoms"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#med_chem_friendly -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#med_chem_friendly"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#molecular_species -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#molecular_species"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#mw_freebase -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#mw_freebase"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#num_alerts -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#num_alerts"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#num_ro5_violations -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#num_ro5_violations"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#psa -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#psa"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#qed_weighted -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#qed_weighted"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#ro3_pass -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#ro3_pass"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#rtb -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#rtb"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties#updated_on -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_properties#updated_on"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#compound_key -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#compound_key"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#compound_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#compound_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#doc_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#doc_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#record_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#record_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#src_compound_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#src_compound_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records#src_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_records#src_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#canonical_smiles -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#canonical_smiles"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#molfile -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#molfile"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#molformula -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#molformula"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#standard_inchi -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#standard_inchi"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures#standard_inchi_key -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/compound_structures#standard_inchi_key"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/confidence_score_lookup#confidence_score -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/confidence_score_lookup#confidence_score"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/confidence_score_lookup#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/confidence_score_lookup#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/confidence_score_lookup#target_mapping -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/confidence_score_lookup#target_mapping"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/curation_lookup#curated_by -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/curation_lookup#curated_by"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/curation_lookup#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/curation_lookup#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/data_validity_lookup#data_validity_comment -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/data_validity_lookup#data_validity_comment"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/data_validity_lookup#description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/data_validity_lookup#description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#atc_code -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#atc_code"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#ddd_admr -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#ddd_admr"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#ddd_comment -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#ddd_comment"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#ddd_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#ddd_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#ddd_units -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#ddd_units"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose#ddd_value -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/defined_daily_dose#ddd_value"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#abstract -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#abstract"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#authors -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#authors"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#chembl_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#doc_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#doc_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#doc_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#doc_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#doi -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#doi"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#first_page -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#first_page"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#issue -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#issue"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#journal -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#journal"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#last_page -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#last_page"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#pubmed_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#pubmed_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#title -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#title"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#volume -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#volume"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs#year -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/docs#year"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/domains#domain_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/domains#domain_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/domains#domain_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/domains#domain_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/domains#domain_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/domains#domain_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/domains#domain_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/domains#domain_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/domains#source_domain_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/domains#source_domain_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#formulation_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/formulations#formulation_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#ingredient -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/formulations#ingredient"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/formulations#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#product_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/formulations#product_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#record_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/formulations#record_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations#strength -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/formulations#strength"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff#activity_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/ligand_eff#activity_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff#bei -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/ligand_eff#bei"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff#le -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/ligand_eff#le"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff#lle -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/ligand_eff#lle"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff#sei -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/ligand_eff#sei"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#availability_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#availability_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#black_box_warning -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#black_box_warning"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#chebi_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#chebi_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#chebi_par_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#chebi_par_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#chembl_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#chirality -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#chirality"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#dosed_ingredient -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#dosed_ingredient"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#first_approval -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#first_approval"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#first_in_class -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#first_in_class"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#inorganic_flag -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#inorganic_flag"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#max_phase -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#max_phase"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#molecule_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#molecule_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#natural_product -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#natural_product"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#oral -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#oral"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#parenteral -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#parenteral"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#pref_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#pref_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#prodrug -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#prodrug"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#structure_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#structure_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#therapeutic_flag -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#therapeutic_flag"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#topical -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#topical"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#usan_stem -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#usan_stem"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary#usan_year -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_dictionary#usan_year"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_hierarchy#active_molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_hierarchy#active_molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_hierarchy#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_hierarchy#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_hierarchy#parent_molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_hierarchy#parent_molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms#molregno -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_synonyms#molregno"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms#molsyn_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_synonyms#molsyn_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms#res_stem_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_synonyms#res_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms#syn_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_synonyms#syn_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms#synonyms -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/molecule_synonyms#synonyms"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/organism_class#l1 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/organism_class#l1"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/organism_class#l2 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/organism_class#l2"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/organism_class#l3 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/organism_class#l3"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/organism_class#oc_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/organism_class#oc_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/organism_class#tax_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/organism_class#tax_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains#activity_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains#activity_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains#confidence -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains#confidence"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains#predbind_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains#predbind_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains#prediction_method -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains#prediction_method"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains#site_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains#site_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#ad_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#ad_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#applicant_full_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#applicant_full_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#approval_date -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#approval_date"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#black_box_warning -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#black_box_warning"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#dosage_form -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#dosage_form"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#innovator_company -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#innovator_company"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#nda_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#nda_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#oral -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#oral"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#parenteral -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#parenteral"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#product_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#product_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#route -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#route"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#topical -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#topical"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products#trade_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/products#trade_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l1 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l1"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l2 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l2"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l3 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l3"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l4 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l4"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l5 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l5"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l6 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l6"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l7 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l7"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#l8 -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#l8"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#protein_class_desc -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#protein_class_desc"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification#protein_class_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/protein_family_classification#protein_class_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/relationship_type#relationship_desc -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/relationship_type#relationship_desc"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/relationship_type#relationship_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/relationship_type#relationship_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies#co_stem_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_companies#co_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies#company -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_companies#company"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies#country -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_companies#country"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies#previous_company -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_companies#previous_company"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies#res_stem_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_companies#res_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_stem#res_stem_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_stem#res_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_stem#research_stem -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/research_stem#research_stem"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/site_components#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components#domain_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/site_components#domain_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components#site_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/site_components#site_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components#site_residues -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/site_components#site_residues"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components#sitecomp_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/site_components#sitecomp_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/source#src_description -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/source#src_description"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/source#src_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/source#src_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/source#src_short_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/source#src_short_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_components#component_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_components#component_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_components#targcomp_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_components#targcomp_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_components#tid -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_components#tid"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#chembl_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#chembl_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#organism -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#organism"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#pref_name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#pref_name"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#target_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#target_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#tax_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#tax_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary#tid -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_dictionary#tid"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_type#parent_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_type#parent_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_type#target_desc -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_type#target_desc"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_type#target_type -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/target_type#target_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems#annotation -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/usan_stems#annotation"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems#major_class -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/usan_stems#major_class"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems#stem -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/usan_stems#stem"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems#stem_class -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/usan_stems#stem_class"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems#usan_stem_id -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/usan_stems#usan_stem_id"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems#who_extra -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/usan_stems#who_extra"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/version#comments -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/version#comments"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/version#creation_date -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/version#creation_date"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/version#name -->
+
+    <owl:DatatypeProperty rdf:about="http://bio2rdf.org/chembl/version#name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activities -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/activities"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/activity_stds_lookup -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/activity_stds_lookup"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assay_type -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/assay_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/assays -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/assays"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/atc_classification -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/atc_classification"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/binding_sites -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/binding_sites"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/bio_component_sequences -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/bio_component_sequences"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutic_components -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/biotherapeutic_components"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/biotherapeutics -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/biotherapeutics"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/cell_dictionary -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/cell_dictionary"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/chembl_id_lookup -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/chembl_id_lookup"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_class -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/component_class"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_domains -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/component_domains"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_sequences -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/component_sequences"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/component_synonyms -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/component_synonyms"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_properties -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/compound_properties"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_records -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/compound_records"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/compound_structures -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/compound_structures"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/confidence_score_lookup -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/confidence_score_lookup"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/curation_lookup -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/curation_lookup"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/data_validity_lookup -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/data_validity_lookup"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/defined_daily_dose -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/defined_daily_dose"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/docs -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/docs"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/domains -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/domains"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/formulations -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/formulations"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/ligand_eff -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/ligand_eff"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_dictionary -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/molecule_dictionary"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_hierarchy -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/molecule_hierarchy"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/molecule_synonyms -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/molecule_synonyms"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/organism_class -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/organism_class"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/predicted_binding_domains -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/predicted_binding_domains"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/products -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/products"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/protein_family_classification -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/protein_family_classification"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/relationship_type -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/relationship_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_companies -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/research_companies"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/research_stem -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/research_stem"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/site_components -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/site_components"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/source -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/source"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_components -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/target_components"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_dictionary -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/target_dictionary"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/target_type -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/target_type"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/usan_stems -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/usan_stems"/>
+    
+
+
+    <!-- http://bio2rdf.org/chembl/version -->
+
+    <owl:Class rdf:about="http://bio2rdf.org/chembl/version"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,384 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/mariano/ontologies/2013/7/untitled-ontology-54#
+
+[SourceDeclaration]
+sourceUri	chembl
+connectionUrl	jdbc:mysql://obdalin3.inf.unibz.it/chembl_16?sessionVariables=sql_mode='ANSI'
+username	fish
+password	fish
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	MAPPING-ID1
+target		<http://bio2rdf.org/chembl/assay_type/assay_type={assay_type}> a <http://bio2rdf.org/chembl/assay_type> ; <http://bio2rdf.org/chembl/assay_type#assay_type> {assay_type} ; <http://bio2rdf.org/chembl/assay_type#assay_desc> {assay_desc} . 
+source		SELECT * FROM "assay_type"
+
+mappingId	MAPPING-ID2
+target		<http://bio2rdf.org/chembl/usan_stems/stem={stem}> a <http://bio2rdf.org/chembl/usan_stems> ; <http://bio2rdf.org/chembl/usan_stems#stem> {stem} ; <http://bio2rdf.org/chembl/usan_stems#stem_class> {stem_class} ; <http://bio2rdf.org/chembl/usan_stems#annotation> {annotation} ; <http://bio2rdf.org/chembl/usan_stems#major_class> {major_class} ; <http://bio2rdf.org/chembl/usan_stems#who_extra> {who_extra} ; <http://bio2rdf.org/chembl/usan_stems#usan_stem_id> {usan_stem_id}^^xsd:integer . 
+source		SELECT * FROM "usan_stems"
+
+mappingId	MAPPING-ID3
+target		<http://bio2rdf.org/chembl/ligand_eff/activity_id={activity_id}> a <http://bio2rdf.org/chembl/ligand_eff> ; <http://bio2rdf.org/chembl/ligand_eff#activity_id> {activity_id}^^xsd:integer ; <http://bio2rdf.org/chembl/ligand_eff#bei> {bei}^^xsd:decimal ; <http://bio2rdf.org/chembl/ligand_eff#sei> {sei}^^xsd:decimal ; <http://bio2rdf.org/chembl/ligand_eff#le> {le}^^xsd:decimal ; <http://bio2rdf.org/chembl/ligand_eff#lle> {lle}^^xsd:decimal . 
+source		SELECT * FROM "ligand_eff"
+
+mappingId	MAPPING-ID4
+target		<http://bio2rdf.org/chembl/ligand_eff/activity_id={ligand_eff_activity_id}> <http://bio2rdf.org/chembl/ligand_eff#ref-activity_id> <http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> . 
+source		SELECT "ligand_eff"."activity_id" AS ligand_eff_activity_id, "activities"."activity_id" AS activities_activity_id FROM "ligand_eff", "activities" WHERE "ligand_eff"."activity_id" = "activities"."activity_id"
+
+mappingId	MAPPING-ID5
+target		<http://bio2rdf.org/chembl/component_synonyms/compsyn_id={compsyn_id}> a <http://bio2rdf.org/chembl/component_synonyms> ; <http://bio2rdf.org/chembl/component_synonyms#compsyn_id> {compsyn_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_synonyms#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_synonyms#component_synonym> {component_synonym} ; <http://bio2rdf.org/chembl/component_synonyms#syn_type> {syn_type} . 
+source		SELECT * FROM "component_synonyms"
+
+mappingId	MAPPING-ID6
+target		<http://bio2rdf.org/chembl/component_synonyms/compsyn_id={component_synonyms_compsyn_id}> <http://bio2rdf.org/chembl/component_synonyms#ref-component_id> <http://bio2rdf.org/chembl/component_sequences/component_id={component_sequences_component_id}> . 
+source		SELECT "component_synonyms"."compsyn_id" AS component_synonyms_compsyn_id, "component_sequences"."component_id" AS component_sequences_component_id FROM "component_synonyms", "component_sequences" WHERE "component_synonyms"."component_id" = "component_sequences"."component_id"
+
+mappingId	MAPPING-ID7
+target		<http://bio2rdf.org/chembl/chembl_id_lookup/chembl_id={chembl_id}> a <http://bio2rdf.org/chembl/chembl_id_lookup> ; <http://bio2rdf.org/chembl/chembl_id_lookup#chembl_id> {chembl_id} ; <http://bio2rdf.org/chembl/chembl_id_lookup#entity_type> {entity_type} ; <http://bio2rdf.org/chembl/chembl_id_lookup#entity_id> {entity_id}^^xsd:integer ; <http://bio2rdf.org/chembl/chembl_id_lookup#status> {status} . 
+source		SELECT * FROM "chembl_id_lookup"
+
+mappingId	MAPPING-ID8
+target		<http://bio2rdf.org/chembl/docs/doc_id={doc_id}> a <http://bio2rdf.org/chembl/docs> ; <http://bio2rdf.org/chembl/docs#doc_id> {doc_id}^^xsd:integer ; <http://bio2rdf.org/chembl/docs#journal> {journal} ; <http://bio2rdf.org/chembl/docs#year> {year}^^xsd:integer ; <http://bio2rdf.org/chembl/docs#volume> {volume} ; <http://bio2rdf.org/chembl/docs#issue> {issue} ; <http://bio2rdf.org/chembl/docs#first_page> {first_page} ; <http://bio2rdf.org/chembl/docs#last_page> {last_page} ; <http://bio2rdf.org/chembl/docs#pubmed_id> {pubmed_id}^^xsd:integer ; <http://bio2rdf.org/chembl/docs#doi> {doi} ; <http://bio2rdf.org/chembl/docs#chembl_id> {chembl_id} ; <http://bio2rdf.org/chembl/docs#title> {title} ; <http://bio2rdf.org/chembl/docs#doc_type> {doc_type} ; <http://bio2rdf.org/chembl/docs#authors> {authors} ; <http://bio2rdf.org/chembl/docs#abstract> {abstract} . 
+source		SELECT * FROM "docs"
+
+mappingId	MAPPING-ID9
+target		<http://bio2rdf.org/chembl/docs/doc_id={docs_doc_id}> <http://bio2rdf.org/chembl/docs#ref-chembl_id> <http://bio2rdf.org/chembl/chembl_id_lookup/chembl_id={chembl_id_lookup_chembl_id}> . 
+source		SELECT "docs"."doc_id" AS docs_doc_id, "chembl_id_lookup"."chembl_id" AS chembl_id_lookup_chembl_id FROM "docs", "chembl_id_lookup" WHERE "docs"."chembl_id" = "chembl_id_lookup"."chembl_id"
+
+mappingId	MAPPING-ID10
+target		<http://bio2rdf.org/chembl/defined_daily_dose/ddd_id={ddd_id}> a <http://bio2rdf.org/chembl/defined_daily_dose> ; <http://bio2rdf.org/chembl/defined_daily_dose#atc_code> {atc_code} ; <http://bio2rdf.org/chembl/defined_daily_dose#ddd_value> {ddd_value}^^xsd:decimal ; <http://bio2rdf.org/chembl/defined_daily_dose#ddd_units> {ddd_units} ; <http://bio2rdf.org/chembl/defined_daily_dose#ddd_admr> {ddd_admr} ; <http://bio2rdf.org/chembl/defined_daily_dose#ddd_comment> {ddd_comment} ; <http://bio2rdf.org/chembl/defined_daily_dose#ddd_id> {ddd_id}^^xsd:integer . 
+source		SELECT * FROM "defined_daily_dose"
+
+mappingId	MAPPING-ID11
+target		<http://bio2rdf.org/chembl/defined_daily_dose/ddd_id={defined_daily_dose_ddd_id}> <http://bio2rdf.org/chembl/defined_daily_dose#ref-atc_code> <http://bio2rdf.org/chembl/atc_classification/level5={atc_classification_level5}> . 
+source		SELECT "defined_daily_dose"."ddd_id" AS defined_daily_dose_ddd_id, "atc_classification"."level5" AS atc_classification_level5 FROM "defined_daily_dose", "atc_classification" WHERE "defined_daily_dose"."atc_code" = "atc_classification"."level5"
+
+mappingId	MAPPING-ID12
+target		<http://bio2rdf.org/chembl/domains/domain_id={domain_id}> a <http://bio2rdf.org/chembl/domains> ; <http://bio2rdf.org/chembl/domains#domain_id> {domain_id}^^xsd:integer ; <http://bio2rdf.org/chembl/domains#domain_type> {domain_type} ; <http://bio2rdf.org/chembl/domains#source_domain_id> {source_domain_id} ; <http://bio2rdf.org/chembl/domains#domain_name> {domain_name} ; <http://bio2rdf.org/chembl/domains#domain_description> {domain_description} . 
+source		SELECT * FROM "domains"
+
+mappingId	MAPPING-ID13
+target		<http://bio2rdf.org/chembl/component_domains/compd_id={compd_id}> a <http://bio2rdf.org/chembl/component_domains> ; <http://bio2rdf.org/chembl/component_domains#compd_id> {compd_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_domains#domain_id> {domain_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_domains#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_domains#start_position> {start_position}^^xsd:integer ; <http://bio2rdf.org/chembl/component_domains#end_position> {end_position}^^xsd:integer . 
+source		SELECT * FROM "component_domains"
+
+mappingId	MAPPING-ID14
+target		<http://bio2rdf.org/chembl/component_domains/compd_id={component_domains_compd_id}> <http://bio2rdf.org/chembl/component_domains#ref-domain_id_component_id> <http://bio2rdf.org/chembl/domains/domain_id={domains_domain_id}> . 
+source		SELECT "component_domains"."compd_id" AS component_domains_compd_id, "domains"."domain_id" AS domains_domain_id FROM "component_domains", "domains" WHERE "component_domains"."domain_id" = "domains"."domain_id"
+
+mappingId	MAPPING-ID15
+target		<http://bio2rdf.org/chembl/component_domains/compd_id={component_domains_compd_id}> <http://bio2rdf.org/chembl/component_domains#ref-domain_id_component_id> <http://bio2rdf.org/chembl/component_sequences/component_id={component_sequences_component_id}> . 
+source		SELECT "component_domains"."compd_id" AS component_domains_compd_id, "component_sequences"."component_id" AS component_sequences_component_id FROM "component_domains", "component_sequences" WHERE "component_domains"."component_id" = "component_sequences"."component_id"
+
+mappingId	MAPPING-ID16
+target		<http://bio2rdf.org/chembl/molecule_hierarchy/molregno={molregno}> a <http://bio2rdf.org/chembl/molecule_hierarchy> ; <http://bio2rdf.org/chembl/molecule_hierarchy#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_hierarchy#parent_molregno> {parent_molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_hierarchy#active_molregno> {active_molregno}^^xsd:integer . 
+source		SELECT * FROM "molecule_hierarchy"
+
+mappingId	MAPPING-ID17
+target		<http://bio2rdf.org/chembl/molecule_hierarchy/molregno={molecule_hierarchy_molregno}> <http://bio2rdf.org/chembl/molecule_hierarchy#ref-molregno_parent_molregno_active_molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "molecule_hierarchy"."molregno" AS molecule_hierarchy_molregno, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "molecule_hierarchy", "molecule_dictionary" WHERE "molecule_hierarchy"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID18
+target		<http://bio2rdf.org/chembl/molecule_hierarchy/molregno={molecule_hierarchy_molregno}> <http://bio2rdf.org/chembl/molecule_hierarchy#ref-molregno_parent_molregno_active_molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "molecule_hierarchy"."molregno" AS molecule_hierarchy_molregno, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "molecule_hierarchy", "molecule_dictionary" WHERE "molecule_hierarchy"."parent_molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID19
+target		<http://bio2rdf.org/chembl/molecule_hierarchy/molregno={molecule_hierarchy_molregno}> <http://bio2rdf.org/chembl/molecule_hierarchy#ref-molregno_parent_molregno_active_molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "molecule_hierarchy"."molregno" AS molecule_hierarchy_molregno, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "molecule_hierarchy", "molecule_dictionary" WHERE "molecule_hierarchy"."active_molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID20
+target		<http://bio2rdf.org/chembl/version/name={name}> a <http://bio2rdf.org/chembl/version> ; <http://bio2rdf.org/chembl/version#name> {name} ; <http://bio2rdf.org/chembl/version#creation_date> {creation_date} ; <http://bio2rdf.org/chembl/version#comments> {comments} . 
+source		SELECT * FROM "version"
+
+mappingId	MAPPING-ID21
+target		<http://bio2rdf.org/chembl/component_sequences/component_id={component_id}> a <http://bio2rdf.org/chembl/component_sequences> ; <http://bio2rdf.org/chembl/component_sequences#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_sequences#component_type> {component_type} ; <http://bio2rdf.org/chembl/component_sequences#accession> {accession} ; <http://bio2rdf.org/chembl/component_sequences#sequence> {sequence} ; <http://bio2rdf.org/chembl/component_sequences#sequence_md5sum> {sequence_md5sum} ; <http://bio2rdf.org/chembl/component_sequences#description> {description} ; <http://bio2rdf.org/chembl/component_sequences#tax_id> {tax_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_sequences#organism> {organism} ; <http://bio2rdf.org/chembl/component_sequences#db_source> {db_source} ; <http://bio2rdf.org/chembl/component_sequences#db_version> {db_version} . 
+source		SELECT * FROM "component_sequences"
+
+mappingId	MAPPING-ID22
+target		<http://bio2rdf.org/chembl/component_class/comp_class_id={comp_class_id}> a <http://bio2rdf.org/chembl/component_class> ; <http://bio2rdf.org/chembl/component_class#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_class#protein_class_id> {protein_class_id}^^xsd:integer ; <http://bio2rdf.org/chembl/component_class#comp_class_id> {comp_class_id}^^xsd:integer . 
+source		SELECT * FROM "component_class"
+
+mappingId	MAPPING-ID23
+target		<http://bio2rdf.org/chembl/component_class/comp_class_id={component_class_comp_class_id}> <http://bio2rdf.org/chembl/component_class#ref-component_id_protein_class_id> <http://bio2rdf.org/chembl/protein_family_classification/protein_class_id={protein_family_classification_protein_class_id}> . 
+source		SELECT "component_class"."comp_class_id" AS component_class_comp_class_id, "protein_family_classification"."protein_class_id" AS protein_family_classification_protein_class_id FROM "component_class", "protein_family_classification" WHERE "component_class"."protein_class_id" = "protein_family_classification"."protein_class_id"
+
+mappingId	MAPPING-ID24
+target		<http://bio2rdf.org/chembl/component_class/comp_class_id={component_class_comp_class_id}> <http://bio2rdf.org/chembl/component_class#ref-component_id_protein_class_id> <http://bio2rdf.org/chembl/component_sequences/component_id={component_sequences_component_id}> . 
+source		SELECT "component_class"."comp_class_id" AS component_class_comp_class_id, "component_sequences"."component_id" AS component_sequences_component_id FROM "component_class", "component_sequences" WHERE "component_class"."component_id" = "component_sequences"."component_id"
+
+mappingId	MAPPING-ID25
+target		<http://bio2rdf.org/chembl/binding_sites/site_id={site_id}> a <http://bio2rdf.org/chembl/binding_sites> ; <http://bio2rdf.org/chembl/binding_sites#site_id> {site_id}^^xsd:integer ; <http://bio2rdf.org/chembl/binding_sites#site_name> {site_name} ; <http://bio2rdf.org/chembl/binding_sites#tid> {tid}^^xsd:integer . 
+source		SELECT * FROM "binding_sites"
+
+mappingId	MAPPING-ID26
+target		<http://bio2rdf.org/chembl/binding_sites/site_id={binding_sites_site_id}> <http://bio2rdf.org/chembl/binding_sites#ref-tid> <http://bio2rdf.org/chembl/target_dictionary/tid={target_dictionary_tid}> . 
+source		SELECT "binding_sites"."site_id" AS binding_sites_site_id, "target_dictionary"."tid" AS target_dictionary_tid FROM "binding_sites", "target_dictionary" WHERE "binding_sites"."tid" = "target_dictionary"."tid"
+
+mappingId	MAPPING-ID27
+target		<http://bio2rdf.org/chembl/bio_component_sequences/component_id={component_id}> a <http://bio2rdf.org/chembl/bio_component_sequences> ; <http://bio2rdf.org/chembl/bio_component_sequences#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/bio_component_sequences#component_type> {component_type} ; <http://bio2rdf.org/chembl/bio_component_sequences#description> {description} ; <http://bio2rdf.org/chembl/bio_component_sequences#sequence> {sequence} ; <http://bio2rdf.org/chembl/bio_component_sequences#sequence_md5sum> {sequence_md5sum} ; <http://bio2rdf.org/chembl/bio_component_sequences#tax_id> {tax_id}^^xsd:integer ; <http://bio2rdf.org/chembl/bio_component_sequences#organism> {organism} . 
+source		SELECT * FROM "bio_component_sequences"
+
+mappingId	MAPPING-ID28
+target		<http://bio2rdf.org/chembl/organism_class/oc_id={oc_id}> a <http://bio2rdf.org/chembl/organism_class> ; <http://bio2rdf.org/chembl/organism_class#oc_id> {oc_id}^^xsd:integer ; <http://bio2rdf.org/chembl/organism_class#tax_id> {tax_id}^^xsd:integer ; <http://bio2rdf.org/chembl/organism_class#l1> {l1} ; <http://bio2rdf.org/chembl/organism_class#l2> {l2} ; <http://bio2rdf.org/chembl/organism_class#l3> {l3} . 
+source		SELECT * FROM "organism_class"
+
+mappingId	MAPPING-ID29
+target		<http://bio2rdf.org/chembl/molecule_synonyms/molsyn_id={molsyn_id}> a <http://bio2rdf.org/chembl/molecule_synonyms> ; <http://bio2rdf.org/chembl/molecule_synonyms#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_synonyms#synonyms> {synonyms} ; <http://bio2rdf.org/chembl/molecule_synonyms#syn_type> {syn_type} ; <http://bio2rdf.org/chembl/molecule_synonyms#molsyn_id> {molsyn_id}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_synonyms#res_stem_id> {res_stem_id}^^xsd:integer . 
+source		SELECT * FROM "molecule_synonyms"
+
+mappingId	MAPPING-ID30
+target		<http://bio2rdf.org/chembl/molecule_synonyms/molsyn_id={molecule_synonyms_molsyn_id}> <http://bio2rdf.org/chembl/molecule_synonyms#ref-molregno_res_stem_id> <http://bio2rdf.org/chembl/research_stem/res_stem_id={research_stem_res_stem_id}> . 
+source		SELECT "molecule_synonyms"."molsyn_id" AS molecule_synonyms_molsyn_id, "research_stem"."res_stem_id" AS research_stem_res_stem_id FROM "molecule_synonyms", "research_stem" WHERE "molecule_synonyms"."res_stem_id" = "research_stem"."res_stem_id"
+
+mappingId	MAPPING-ID31
+target		<http://bio2rdf.org/chembl/molecule_synonyms/molsyn_id={molecule_synonyms_molsyn_id}> <http://bio2rdf.org/chembl/molecule_synonyms#ref-molregno_res_stem_id> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "molecule_synonyms"."molsyn_id" AS molecule_synonyms_molsyn_id, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "molecule_synonyms", "molecule_dictionary" WHERE "molecule_synonyms"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID32
+target		<http://bio2rdf.org/chembl/activities/activity_id={activity_id}> a <http://bio2rdf.org/chembl/activities> ; <http://bio2rdf.org/chembl/activities#activity_id> {activity_id}^^xsd:integer ; <http://bio2rdf.org/chembl/activities#assay_id> {assay_id}^^xsd:integer ; <http://bio2rdf.org/chembl/activities#doc_id> {doc_id}^^xsd:integer ; <http://bio2rdf.org/chembl/activities#record_id> {record_id}^^xsd:integer ; <http://bio2rdf.org/chembl/activities#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/activities#standard_relation> {standard_relation} ; <http://bio2rdf.org/chembl/activities#published_value> {published_value}^^xsd:decimal ; <http://bio2rdf.org/chembl/activities#published_units> {published_units} ; <http://bio2rdf.org/chembl/activities#standard_value> {standard_value}^^xsd:decimal ; <http://bio2rdf.org/chembl/activities#standard_units> {standard_units} ; <http://bio2rdf.org/chembl/activities#standard_flag> {standard_flag}^^xsd:boolean ; <http://bio2rdf.org/chembl/activities#standard_type> {standard_type} ; <http://bio2rdf.org/chembl/activities#activity_comment> {activity_comment} ; <http://bio2rdf.org/chembl/activities#published_type> {published_type} ; <http://bio2rdf.org/chembl/activities#data_validity_comment> {data_validity_comment} ; <http://bio2rdf.org/chembl/activities#potential_duplicate> {potential_duplicate}^^xsd:boolean ; <http://bio2rdf.org/chembl/activities#published_relation> {published_relation} ; <http://bio2rdf.org/chembl/activities#pchembl_value> {pchembl_value}^^xsd:decimal . 
+source		SELECT * FROM "activities"
+
+mappingId	MAPPING-ID33
+target		<http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> <http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment> <http://bio2rdf.org/chembl/data_validity_lookup/data_validity_comment={data_validity_lookup_data_validity_comment}> . 
+source		SELECT "activities"."activity_id" AS activities_activity_id, "data_validity_lookup"."data_validity_comment" AS data_validity_lookup_data_validity_comment FROM "activities", "data_validity_lookup" WHERE "activities"."data_validity_comment" = "data_validity_lookup"."data_validity_comment"
+
+mappingId	MAPPING-ID34
+target		<http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> <http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment> <http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> . 
+source		SELECT "activities"."activity_id" AS activities_activity_id, "assays"."assay_id" AS assays_assay_id FROM "activities", "assays" WHERE "activities"."assay_id" = "assays"."assay_id"
+
+mappingId	MAPPING-ID35
+target		<http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> <http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "activities"."activity_id" AS activities_activity_id, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "activities", "molecule_dictionary" WHERE "activities"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID36
+target		<http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> <http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment> <http://bio2rdf.org/chembl/docs/doc_id={docs_doc_id}> . 
+source		SELECT "activities"."activity_id" AS activities_activity_id, "docs"."doc_id" AS docs_doc_id FROM "activities", "docs" WHERE "activities"."doc_id" = "docs"."doc_id"
+
+mappingId	MAPPING-ID37
+target		<http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> <http://bio2rdf.org/chembl/activities#ref-assay_id_doc_id_record_id_molregno_data_validity_comment> <http://bio2rdf.org/chembl/compound_records/record_id={compound_records_record_id}> . 
+source		SELECT "activities"."activity_id" AS activities_activity_id, "compound_records"."record_id" AS compound_records_record_id FROM "activities", "compound_records" WHERE "activities"."record_id" = "compound_records"."record_id"
+
+mappingId	MAPPING-ID38
+target		<http://bio2rdf.org/chembl/products/product_id={product_id}> a <http://bio2rdf.org/chembl/products> ; <http://bio2rdf.org/chembl/products#dosage_form> {dosage_form} ; <http://bio2rdf.org/chembl/products#route> {route} ; <http://bio2rdf.org/chembl/products#trade_name> {trade_name} ; <http://bio2rdf.org/chembl/products#approval_date> {approval_date} ; <http://bio2rdf.org/chembl/products#ad_type> {ad_type} ; <http://bio2rdf.org/chembl/products#oral> {oral}^^xsd:boolean ; <http://bio2rdf.org/chembl/products#topical> {topical}^^xsd:boolean ; <http://bio2rdf.org/chembl/products#parenteral> {parenteral}^^xsd:boolean ; <http://bio2rdf.org/chembl/products#black_box_warning> {black_box_warning}^^xsd:boolean ; <http://bio2rdf.org/chembl/products#applicant_full_name> {applicant_full_name} ; <http://bio2rdf.org/chembl/products#innovator_company> {innovator_company}^^xsd:boolean ; <http://bio2rdf.org/chembl/products#product_id> {product_id} ; <http://bio2rdf.org/chembl/products#nda_type> {nda_type} . 
+source		SELECT * FROM "products"
+
+mappingId	MAPPING-ID39
+target		<http://bio2rdf.org/chembl/target_dictionary/tid={tid}> a <http://bio2rdf.org/chembl/target_dictionary> ; <http://bio2rdf.org/chembl/target_dictionary#tid> {tid}^^xsd:integer ; <http://bio2rdf.org/chembl/target_dictionary#target_type> {target_type} ; <http://bio2rdf.org/chembl/target_dictionary#pref_name> {pref_name} ; <http://bio2rdf.org/chembl/target_dictionary#tax_id> {tax_id}^^xsd:integer ; <http://bio2rdf.org/chembl/target_dictionary#organism> {organism} ; <http://bio2rdf.org/chembl/target_dictionary#chembl_id> {chembl_id} . 
+source		SELECT * FROM "target_dictionary"
+
+mappingId	MAPPING-ID40
+target		<http://bio2rdf.org/chembl/target_dictionary/tid={target_dictionary_tid}> <http://bio2rdf.org/chembl/target_dictionary#ref-target_type_chembl_id> <http://bio2rdf.org/chembl/chembl_id_lookup/chembl_id={chembl_id_lookup_chembl_id}> . 
+source		SELECT "target_dictionary"."tid" AS target_dictionary_tid, "chembl_id_lookup"."chembl_id" AS chembl_id_lookup_chembl_id FROM "target_dictionary", "chembl_id_lookup" WHERE "target_dictionary"."chembl_id" = "chembl_id_lookup"."chembl_id"
+
+mappingId	MAPPING-ID41
+target		<http://bio2rdf.org/chembl/target_dictionary/tid={target_dictionary_tid}> <http://bio2rdf.org/chembl/target_dictionary#ref-target_type_chembl_id> <http://bio2rdf.org/chembl/target_type/target_type={target_type_target_type}> . 
+source		SELECT "target_dictionary"."tid" AS target_dictionary_tid, "target_type"."target_type" AS target_type_target_type FROM "target_dictionary", "target_type" WHERE "target_dictionary"."target_type" = "target_type"."target_type"
+
+mappingId	MAPPING-ID42
+target		<http://bio2rdf.org/chembl/formulations/formulation_id={formulation_id}> a <http://bio2rdf.org/chembl/formulations> ; <http://bio2rdf.org/chembl/formulations#product_id> {product_id} ; <http://bio2rdf.org/chembl/formulations#ingredient> {ingredient} ; <http://bio2rdf.org/chembl/formulations#strength> {strength} ; <http://bio2rdf.org/chembl/formulations#record_id> {record_id}^^xsd:integer ; <http://bio2rdf.org/chembl/formulations#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/formulations#formulation_id> {formulation_id}^^xsd:integer . 
+source		SELECT * FROM "formulations"
+
+mappingId	MAPPING-ID43
+target		<http://bio2rdf.org/chembl/formulations/formulation_id={formulations_formulation_id}> <http://bio2rdf.org/chembl/formulations#ref-product_id_record_id_molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "formulations"."formulation_id" AS formulations_formulation_id, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "formulations", "molecule_dictionary" WHERE "formulations"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID44
+target		<http://bio2rdf.org/chembl/formulations/formulation_id={formulations_formulation_id}> <http://bio2rdf.org/chembl/formulations#ref-product_id_record_id_molregno> <http://bio2rdf.org/chembl/products/product_id={products_product_id}> . 
+source		SELECT "formulations"."formulation_id" AS formulations_formulation_id, "products"."product_id" AS products_product_id FROM "formulations", "products" WHERE "formulations"."product_id" = "products"."product_id"
+
+mappingId	MAPPING-ID45
+target		<http://bio2rdf.org/chembl/formulations/formulation_id={formulations_formulation_id}> <http://bio2rdf.org/chembl/formulations#ref-product_id_record_id_molregno> <http://bio2rdf.org/chembl/compound_records/record_id={compound_records_record_id}> . 
+source		SELECT "formulations"."formulation_id" AS formulations_formulation_id, "compound_records"."record_id" AS compound_records_record_id FROM "formulations", "compound_records" WHERE "formulations"."record_id" = "compound_records"."record_id"
+
+mappingId	MAPPING-ID46
+target		<http://bio2rdf.org/chembl/target_components/targcomp_id={targcomp_id}> a <http://bio2rdf.org/chembl/target_components> ; <http://bio2rdf.org/chembl/target_components#tid> {tid}^^xsd:integer ; <http://bio2rdf.org/chembl/target_components#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/target_components#targcomp_id> {targcomp_id}^^xsd:integer . 
+source		SELECT * FROM "target_components"
+
+mappingId	MAPPING-ID47
+target		<http://bio2rdf.org/chembl/target_components/targcomp_id={target_components_targcomp_id}> <http://bio2rdf.org/chembl/target_components#ref-tid_component_id> <http://bio2rdf.org/chembl/target_dictionary/tid={target_dictionary_tid}> . 
+source		SELECT "target_components"."targcomp_id" AS target_components_targcomp_id, "target_dictionary"."tid" AS target_dictionary_tid FROM "target_components", "target_dictionary" WHERE "target_components"."tid" = "target_dictionary"."tid"
+
+mappingId	MAPPING-ID48
+target		<http://bio2rdf.org/chembl/target_components/targcomp_id={target_components_targcomp_id}> <http://bio2rdf.org/chembl/target_components#ref-tid_component_id> <http://bio2rdf.org/chembl/component_sequences/component_id={component_sequences_component_id}> . 
+source		SELECT "target_components"."targcomp_id" AS target_components_targcomp_id, "component_sequences"."component_id" AS component_sequences_component_id FROM "target_components", "component_sequences" WHERE "target_components"."component_id" = "component_sequences"."component_id"
+
+mappingId	MAPPING-ID49
+target		<http://bio2rdf.org/chembl/biotherapeutics/molregno={molregno}> a <http://bio2rdf.org/chembl/biotherapeutics> ; <http://bio2rdf.org/chembl/biotherapeutics#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/biotherapeutics#description> {description} . 
+source		SELECT * FROM "biotherapeutics"
+
+mappingId	MAPPING-ID50
+target		<http://bio2rdf.org/chembl/biotherapeutics/molregno={biotherapeutics_molregno}> <http://bio2rdf.org/chembl/biotherapeutics#ref-molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "biotherapeutics"."molregno" AS biotherapeutics_molregno, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "biotherapeutics", "molecule_dictionary" WHERE "biotherapeutics"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID51
+target		<http://bio2rdf.org/chembl/molecule_dictionary/molregno={molregno}> a <http://bio2rdf.org/chembl/molecule_dictionary> ; <http://bio2rdf.org/chembl/molecule_dictionary#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#pref_name> {pref_name} ; <http://bio2rdf.org/chembl/molecule_dictionary#chembl_id> {chembl_id} ; <http://bio2rdf.org/chembl/molecule_dictionary#max_phase> {max_phase}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#therapeutic_flag> {therapeutic_flag}^^xsd:boolean ; <http://bio2rdf.org/chembl/molecule_dictionary#dosed_ingredient> {dosed_ingredient}^^xsd:boolean ; <http://bio2rdf.org/chembl/molecule_dictionary#structure_type> {structure_type} ; <http://bio2rdf.org/chembl/molecule_dictionary#chebi_id> {chebi_id}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#chebi_par_id> {chebi_par_id}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#molecule_type> {molecule_type} ; <http://bio2rdf.org/chembl/molecule_dictionary#first_approval> {first_approval}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#oral> {oral}^^xsd:boolean ; <http://bio2rdf.org/chembl/molecule_dictionary#parenteral> {parenteral}^^xsd:boolean ; <http://bio2rdf.org/chembl/molecule_dictionary#topical> {topical}^^xsd:boolean ; <http://bio2rdf.org/chembl/molecule_dictionary#black_box_warning> {black_box_warning}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#natural_product> {natural_product}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#first_in_class> {first_in_class}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#chirality> {chirality}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#prodrug> {prodrug}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#inorganic_flag> {inorganic_flag}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#usan_year> {usan_year}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#availability_type> {availability_type}^^xsd:integer ; <http://bio2rdf.org/chembl/molecule_dictionary#usan_stem> {usan_stem} . 
+source		SELECT * FROM "molecule_dictionary"
+
+mappingId	MAPPING-ID52
+target		<http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> <http://bio2rdf.org/chembl/molecule_dictionary#ref-chembl_id> <http://bio2rdf.org/chembl/chembl_id_lookup/chembl_id={chembl_id_lookup_chembl_id}> . 
+source		SELECT "molecule_dictionary"."molregno" AS molecule_dictionary_molregno, "chembl_id_lookup"."chembl_id" AS chembl_id_lookup_chembl_id FROM "molecule_dictionary", "chembl_id_lookup" WHERE "molecule_dictionary"."chembl_id" = "chembl_id_lookup"."chembl_id"
+
+mappingId	MAPPING-ID53
+target		<http://bio2rdf.org/chembl/research_stem/res_stem_id={res_stem_id}> a <http://bio2rdf.org/chembl/research_stem> ; <http://bio2rdf.org/chembl/research_stem#res_stem_id> {res_stem_id}^^xsd:integer ; <http://bio2rdf.org/chembl/research_stem#research_stem> {research_stem} . 
+source		SELECT * FROM "research_stem"
+
+mappingId	MAPPING-ID54
+target		<http://bio2rdf.org/chembl/biotherapeutic_components/biocomp_id={biocomp_id}> a <http://bio2rdf.org/chembl/biotherapeutic_components> ; <http://bio2rdf.org/chembl/biotherapeutic_components#biocomp_id> {biocomp_id}^^xsd:integer ; <http://bio2rdf.org/chembl/biotherapeutic_components#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/biotherapeutic_components#component_id> {component_id}^^xsd:integer . 
+source		SELECT * FROM "biotherapeutic_components"
+
+mappingId	MAPPING-ID55
+target		<http://bio2rdf.org/chembl/biotherapeutic_components/biocomp_id={biotherapeutic_components_biocomp_id}> <http://bio2rdf.org/chembl/biotherapeutic_components#ref-molregno_component_id> <http://bio2rdf.org/chembl/biotherapeutics/molregno={biotherapeutics_molregno}> . 
+source		SELECT "biotherapeutic_components"."biocomp_id" AS biotherapeutic_components_biocomp_id, "biotherapeutics"."molregno" AS biotherapeutics_molregno FROM "biotherapeutic_components", "biotherapeutics" WHERE "biotherapeutic_components"."molregno" = "biotherapeutics"."molregno"
+
+mappingId	MAPPING-ID56
+target		<http://bio2rdf.org/chembl/biotherapeutic_components/biocomp_id={biotherapeutic_components_biocomp_id}> <http://bio2rdf.org/chembl/biotherapeutic_components#ref-molregno_component_id> <http://bio2rdf.org/chembl/bio_component_sequences/component_id={bio_component_sequences_component_id}> . 
+source		SELECT "biotherapeutic_components"."biocomp_id" AS biotherapeutic_components_biocomp_id, "bio_component_sequences"."component_id" AS bio_component_sequences_component_id FROM "biotherapeutic_components", "bio_component_sequences" WHERE "biotherapeutic_components"."component_id" = "bio_component_sequences"."component_id"
+
+mappingId	MAPPING-ID57
+target		<http://bio2rdf.org/chembl/curation_lookup/curated_by={curated_by}> a <http://bio2rdf.org/chembl/curation_lookup> ; <http://bio2rdf.org/chembl/curation_lookup#curated_by> {curated_by} ; <http://bio2rdf.org/chembl/curation_lookup#description> {description} . 
+source		SELECT * FROM "curation_lookup"
+
+mappingId	MAPPING-ID58
+target		<http://bio2rdf.org/chembl/assays/assay_id={assay_id}> a <http://bio2rdf.org/chembl/assays> ; <http://bio2rdf.org/chembl/assays#assay_id> {assay_id}^^xsd:integer ; <http://bio2rdf.org/chembl/assays#doc_id> {doc_id}^^xsd:integer ; <http://bio2rdf.org/chembl/assays#description> {description} ; <http://bio2rdf.org/chembl/assays#assay_type> {assay_type} ; <http://bio2rdf.org/chembl/assays#assay_test_type> {assay_test_type} ; <http://bio2rdf.org/chembl/assays#assay_category> {assay_category} ; <http://bio2rdf.org/chembl/assays#assay_organism> {assay_organism} ; <http://bio2rdf.org/chembl/assays#assay_tax_id> {assay_tax_id}^^xsd:integer ; <http://bio2rdf.org/chembl/assays#assay_strain> {assay_strain} ; <http://bio2rdf.org/chembl/assays#assay_tissue> {assay_tissue} ; <http://bio2rdf.org/chembl/assays#assay_cell_type> {assay_cell_type} ; <http://bio2rdf.org/chembl/assays#assay_subcellular_fraction> {assay_subcellular_fraction} ; <http://bio2rdf.org/chembl/assays#tid> {tid}^^xsd:integer ; <http://bio2rdf.org/chembl/assays#relationship_type> {relationship_type} ; <http://bio2rdf.org/chembl/assays#confidence_score> {confidence_score}^^xsd:integer ; <http://bio2rdf.org/chembl/assays#curated_by> {curated_by} ; <http://bio2rdf.org/chembl/assays#src_id> {src_id}^^xsd:integer ; <http://bio2rdf.org/chembl/assays#src_assay_id> {src_assay_id} ; <http://bio2rdf.org/chembl/assays#chembl_id> {chembl_id} . 
+source		SELECT * FROM "assays"
+
+mappingId	MAPPING-ID59
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/docs/doc_id={docs_doc_id}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "docs"."doc_id" AS docs_doc_id FROM "assays", "docs" WHERE "assays"."doc_id" = "docs"."doc_id"
+
+mappingId	MAPPING-ID60
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/chembl_id_lookup/chembl_id={chembl_id_lookup_chembl_id}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "chembl_id_lookup"."chembl_id" AS chembl_id_lookup_chembl_id FROM "assays", "chembl_id_lookup" WHERE "assays"."chembl_id" = "chembl_id_lookup"."chembl_id"
+
+mappingId	MAPPING-ID61
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/target_dictionary/tid={target_dictionary_tid}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "target_dictionary"."tid" AS target_dictionary_tid FROM "assays", "target_dictionary" WHERE "assays"."tid" = "target_dictionary"."tid"
+
+mappingId	MAPPING-ID62
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/relationship_type/relationship_type={relationship_type_relationship_type}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "relationship_type"."relationship_type" AS relationship_type_relationship_type FROM "assays", "relationship_type" WHERE "assays"."relationship_type" = "relationship_type"."relationship_type"
+
+mappingId	MAPPING-ID63
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/confidence_score_lookup/confidence_score={confidence_score_lookup_confidence_score}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "confidence_score_lookup"."confidence_score" AS confidence_score_lookup_confidence_score FROM "assays", "confidence_score_lookup" WHERE "assays"."confidence_score" = "confidence_score_lookup"."confidence_score"
+
+mappingId	MAPPING-ID64
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/assay_type/assay_type={assay_type_assay_type}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "assay_type"."assay_type" AS assay_type_assay_type FROM "assays", "assay_type" WHERE "assays"."assay_type" = "assay_type"."assay_type"
+
+mappingId	MAPPING-ID65
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/curation_lookup/curated_by={curation_lookup_curated_by}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "curation_lookup"."curated_by" AS curation_lookup_curated_by FROM "assays", "curation_lookup" WHERE "assays"."curated_by" = "curation_lookup"."curated_by"
+
+mappingId	MAPPING-ID66
+target		<http://bio2rdf.org/chembl/assays/assay_id={assays_assay_id}> <http://bio2rdf.org/chembl/assays#ref-doc_id_assay_type_tid_relationship_type_confidence_score_src_id_curated_by_chembl_id> <http://bio2rdf.org/chembl/source/src_id={source_src_id}> . 
+source		SELECT "assays"."assay_id" AS assays_assay_id, "source"."src_id" AS source_src_id FROM "assays", "source" WHERE "assays"."src_id" = "source"."src_id"
+
+mappingId	MAPPING-ID67
+target		<http://bio2rdf.org/chembl/site_components/sitecomp_id={sitecomp_id}> a <http://bio2rdf.org/chembl/site_components> ; <http://bio2rdf.org/chembl/site_components#sitecomp_id> {sitecomp_id}^^xsd:integer ; <http://bio2rdf.org/chembl/site_components#site_id> {site_id}^^xsd:integer ; <http://bio2rdf.org/chembl/site_components#component_id> {component_id}^^xsd:integer ; <http://bio2rdf.org/chembl/site_components#domain_id> {domain_id}^^xsd:integer ; <http://bio2rdf.org/chembl/site_components#site_residues> {site_residues} . 
+source		SELECT * FROM "site_components"
+
+mappingId	MAPPING-ID68
+target		<http://bio2rdf.org/chembl/site_components/sitecomp_id={site_components_sitecomp_id}> <http://bio2rdf.org/chembl/site_components#ref-site_id_component_id_domain_id> <http://bio2rdf.org/chembl/domains/domain_id={domains_domain_id}> . 
+source		SELECT "site_components"."sitecomp_id" AS site_components_sitecomp_id, "domains"."domain_id" AS domains_domain_id FROM "site_components", "domains" WHERE "site_components"."domain_id" = "domains"."domain_id"
+
+mappingId	MAPPING-ID69
+target		<http://bio2rdf.org/chembl/site_components/sitecomp_id={site_components_sitecomp_id}> <http://bio2rdf.org/chembl/site_components#ref-site_id_component_id_domain_id> <http://bio2rdf.org/chembl/component_sequences/component_id={component_sequences_component_id}> . 
+source		SELECT "site_components"."sitecomp_id" AS site_components_sitecomp_id, "component_sequences"."component_id" AS component_sequences_component_id FROM "site_components", "component_sequences" WHERE "site_components"."component_id" = "component_sequences"."component_id"
+
+mappingId	MAPPING-ID70
+target		<http://bio2rdf.org/chembl/site_components/sitecomp_id={site_components_sitecomp_id}> <http://bio2rdf.org/chembl/site_components#ref-site_id_component_id_domain_id> <http://bio2rdf.org/chembl/binding_sites/site_id={binding_sites_site_id}> . 
+source		SELECT "site_components"."sitecomp_id" AS site_components_sitecomp_id, "binding_sites"."site_id" AS binding_sites_site_id FROM "site_components", "binding_sites" WHERE "site_components"."site_id" = "binding_sites"."site_id"
+
+mappingId	MAPPING-ID71
+target		<http://bio2rdf.org/chembl/predicted_binding_domains/predbind_id={predbind_id}> a <http://bio2rdf.org/chembl/predicted_binding_domains> ; <http://bio2rdf.org/chembl/predicted_binding_domains#predbind_id> {predbind_id}^^xsd:integer ; <http://bio2rdf.org/chembl/predicted_binding_domains#activity_id> {activity_id}^^xsd:integer ; <http://bio2rdf.org/chembl/predicted_binding_domains#site_id> {site_id}^^xsd:integer ; <http://bio2rdf.org/chembl/predicted_binding_domains#prediction_method> {prediction_method} ; <http://bio2rdf.org/chembl/predicted_binding_domains#confidence> {confidence} . 
+source		SELECT * FROM "predicted_binding_domains"
+
+mappingId	MAPPING-ID72
+target		<http://bio2rdf.org/chembl/predicted_binding_domains/predbind_id={predicted_binding_domains_predbind_id}> <http://bio2rdf.org/chembl/predicted_binding_domains#ref-activity_id_site_id> <http://bio2rdf.org/chembl/activities/activity_id={activities_activity_id}> . 
+source		SELECT "predicted_binding_domains"."predbind_id" AS predicted_binding_domains_predbind_id, "activities"."activity_id" AS activities_activity_id FROM "predicted_binding_domains", "activities" WHERE "predicted_binding_domains"."activity_id" = "activities"."activity_id"
+
+mappingId	MAPPING-ID73
+target		<http://bio2rdf.org/chembl/predicted_binding_domains/predbind_id={predicted_binding_domains_predbind_id}> <http://bio2rdf.org/chembl/predicted_binding_domains#ref-activity_id_site_id> <http://bio2rdf.org/chembl/binding_sites/site_id={binding_sites_site_id}> . 
+source		SELECT "predicted_binding_domains"."predbind_id" AS predicted_binding_domains_predbind_id, "binding_sites"."site_id" AS binding_sites_site_id FROM "predicted_binding_domains", "binding_sites" WHERE "predicted_binding_domains"."site_id" = "binding_sites"."site_id"
+
+mappingId	MAPPING-ID74
+target		<http://bio2rdf.org/chembl/atc_classification/level5={level5}> a <http://bio2rdf.org/chembl/atc_classification> ; <http://bio2rdf.org/chembl/atc_classification#who_name> {who_name} ; <http://bio2rdf.org/chembl/atc_classification#level1> {level1} ; <http://bio2rdf.org/chembl/atc_classification#level2> {level2} ; <http://bio2rdf.org/chembl/atc_classification#level3> {level3} ; <http://bio2rdf.org/chembl/atc_classification#level4> {level4} ; <http://bio2rdf.org/chembl/atc_classification#level5> {level5} ; <http://bio2rdf.org/chembl/atc_classification#who_id> {who_id} ; <http://bio2rdf.org/chembl/atc_classification#level1_description> {level1_description} ; <http://bio2rdf.org/chembl/atc_classification#level2_description> {level2_description} ; <http://bio2rdf.org/chembl/atc_classification#level3_description> {level3_description} ; <http://bio2rdf.org/chembl/atc_classification#level4_description> {level4_description} ; <http://bio2rdf.org/chembl/atc_classification#molregno> {molregno}^^xsd:integer . 
+source		SELECT * FROM "atc_classification"
+
+mappingId	MAPPING-ID75
+target		<http://bio2rdf.org/chembl/atc_classification/level5={atc_classification_level5}> <http://bio2rdf.org/chembl/atc_classification#ref-molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "atc_classification"."level5" AS atc_classification_level5, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "atc_classification", "molecule_dictionary" WHERE "atc_classification"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID76
+target		<http://bio2rdf.org/chembl/compound_structures/molregno={molregno}> a <http://bio2rdf.org/chembl/compound_structures> ; <http://bio2rdf.org/chembl/compound_structures#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_structures#molfile> {molfile} ; <http://bio2rdf.org/chembl/compound_structures#standard_inchi> {standard_inchi} ; <http://bio2rdf.org/chembl/compound_structures#standard_inchi_key> {standard_inchi_key} ; <http://bio2rdf.org/chembl/compound_structures#canonical_smiles> {canonical_smiles} ; <http://bio2rdf.org/chembl/compound_structures#molformula> {molformula} . 
+source		SELECT * FROM "compound_structures"
+
+mappingId	MAPPING-ID77
+target		<http://bio2rdf.org/chembl/compound_structures/molregno={compound_structures_molregno}> <http://bio2rdf.org/chembl/compound_structures#ref-molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "compound_structures"."molregno" AS compound_structures_molregno, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "compound_structures", "molecule_dictionary" WHERE "compound_structures"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID78
+target		<http://bio2rdf.org/chembl/cell_dictionary/cell_id={cell_id}> a <http://bio2rdf.org/chembl/cell_dictionary> ; <http://bio2rdf.org/chembl/cell_dictionary#cell_id> {cell_id}^^xsd:integer ; <http://bio2rdf.org/chembl/cell_dictionary#cell_name> {cell_name} ; <http://bio2rdf.org/chembl/cell_dictionary#cell_description> {cell_description} ; <http://bio2rdf.org/chembl/cell_dictionary#cell_source_tissue> {cell_source_tissue} ; <http://bio2rdf.org/chembl/cell_dictionary#cell_source_organism> {cell_source_organism} ; <http://bio2rdf.org/chembl/cell_dictionary#cell_source_tax_id> {cell_source_tax_id}^^xsd:integer . 
+source		SELECT * FROM "cell_dictionary"
+
+mappingId	MAPPING-ID79
+target		<http://bio2rdf.org/chembl/source/src_id={src_id}> a <http://bio2rdf.org/chembl/source> ; <http://bio2rdf.org/chembl/source#src_id> {src_id}^^xsd:integer ; <http://bio2rdf.org/chembl/source#src_description> {src_description} ; <http://bio2rdf.org/chembl/source#src_short_name> {src_short_name} . 
+source		SELECT * FROM "source"
+
+mappingId	MAPPING-ID80
+target		<http://bio2rdf.org/chembl/activity_stds_lookup/std_act_id={std_act_id}> a <http://bio2rdf.org/chembl/activity_stds_lookup> ; <http://bio2rdf.org/chembl/activity_stds_lookup#std_act_id> {std_act_id}^^xsd:integer ; <http://bio2rdf.org/chembl/activity_stds_lookup#standard_type> {standard_type} ; <http://bio2rdf.org/chembl/activity_stds_lookup#definition> {definition} ; <http://bio2rdf.org/chembl/activity_stds_lookup#standard_units> {standard_units} ; <http://bio2rdf.org/chembl/activity_stds_lookup#normal_range_min> {normal_range_min}^^xsd:decimal ; <http://bio2rdf.org/chembl/activity_stds_lookup#normal_range_max> {normal_range_max}^^xsd:decimal . 
+source		SELECT * FROM "activity_stds_lookup"
+
+mappingId	MAPPING-ID81
+target		<http://bio2rdf.org/chembl/compound_records/record_id={record_id}> a <http://bio2rdf.org/chembl/compound_records> ; <http://bio2rdf.org/chembl/compound_records#record_id> {record_id}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_records#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_records#doc_id> {doc_id}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_records#compound_key> {compound_key} ; <http://bio2rdf.org/chembl/compound_records#compound_name> {compound_name} ; <http://bio2rdf.org/chembl/compound_records#src_id> {src_id}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_records#src_compound_id> {src_compound_id} . 
+source		SELECT * FROM "compound_records"
+
+mappingId	MAPPING-ID82
+target		<http://bio2rdf.org/chembl/compound_records/record_id={compound_records_record_id}> <http://bio2rdf.org/chembl/compound_records#ref-molregno_doc_id_src_id> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "compound_records"."record_id" AS compound_records_record_id, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "compound_records", "molecule_dictionary" WHERE "compound_records"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID83
+target		<http://bio2rdf.org/chembl/compound_records/record_id={compound_records_record_id}> <http://bio2rdf.org/chembl/compound_records#ref-molregno_doc_id_src_id> <http://bio2rdf.org/chembl/source/src_id={source_src_id}> . 
+source		SELECT "compound_records"."record_id" AS compound_records_record_id, "source"."src_id" AS source_src_id FROM "compound_records", "source" WHERE "compound_records"."src_id" = "source"."src_id"
+
+mappingId	MAPPING-ID84
+target		<http://bio2rdf.org/chembl/compound_records/record_id={compound_records_record_id}> <http://bio2rdf.org/chembl/compound_records#ref-molregno_doc_id_src_id> <http://bio2rdf.org/chembl/docs/doc_id={docs_doc_id}> . 
+source		SELECT "compound_records"."record_id" AS compound_records_record_id, "docs"."doc_id" AS docs_doc_id FROM "compound_records", "docs" WHERE "compound_records"."doc_id" = "docs"."doc_id"
+
+mappingId	MAPPING-ID85
+target		<http://bio2rdf.org/chembl/data_validity_lookup/data_validity_comment={data_validity_comment}> a <http://bio2rdf.org/chembl/data_validity_lookup> ; <http://bio2rdf.org/chembl/data_validity_lookup#data_validity_comment> {data_validity_comment} ; <http://bio2rdf.org/chembl/data_validity_lookup#description> {description} . 
+source		SELECT * FROM "data_validity_lookup"
+
+mappingId	MAPPING-ID86
+target		<http://bio2rdf.org/chembl/protein_family_classification/protein_class_id={protein_class_id}> a <http://bio2rdf.org/chembl/protein_family_classification> ; <http://bio2rdf.org/chembl/protein_family_classification#protein_class_id> {protein_class_id}^^xsd:integer ; <http://bio2rdf.org/chembl/protein_family_classification#protein_class_desc> {protein_class_desc} ; <http://bio2rdf.org/chembl/protein_family_classification#l1> {l1} ; <http://bio2rdf.org/chembl/protein_family_classification#l2> {l2} ; <http://bio2rdf.org/chembl/protein_family_classification#l3> {l3} ; <http://bio2rdf.org/chembl/protein_family_classification#l4> {l4} ; <http://bio2rdf.org/chembl/protein_family_classification#l5> {l5} ; <http://bio2rdf.org/chembl/protein_family_classification#l6> {l6} ; <http://bio2rdf.org/chembl/protein_family_classification#l7> {l7} ; <http://bio2rdf.org/chembl/protein_family_classification#l8> {l8} . 
+source		SELECT * FROM "protein_family_classification"
+
+mappingId	MAPPING-ID87
+target		<http://bio2rdf.org/chembl/compound_properties/molregno={molregno}> a <http://bio2rdf.org/chembl/compound_properties> ; <http://bio2rdf.org/chembl/compound_properties#molregno> {molregno}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#mw_freebase> {mw_freebase}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#alogp> {alogp}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#hba> {hba}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#hbd> {hbd}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#psa> {psa}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#rtb> {rtb}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#ro3_pass> {ro3_pass} ; <http://bio2rdf.org/chembl/compound_properties#num_ro5_violations> {num_ro5_violations}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#med_chem_friendly> {med_chem_friendly} ; <http://bio2rdf.org/chembl/compound_properties#acd_most_apka> {acd_most_apka}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#acd_most_bpka> {acd_most_bpka}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#acd_logp> {acd_logp}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#acd_logd> {acd_logd}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#molecular_species> {molecular_species} ; <http://bio2rdf.org/chembl/compound_properties#full_mwt> {full_mwt}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#aromatic_rings> {aromatic_rings}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#heavy_atoms> {heavy_atoms}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#num_alerts> {num_alerts}^^xsd:integer ; <http://bio2rdf.org/chembl/compound_properties#qed_weighted> {qed_weighted}^^xsd:decimal ; <http://bio2rdf.org/chembl/compound_properties#updated_on> {updated_on} . 
+source		SELECT * FROM "compound_properties"
+
+mappingId	MAPPING-ID88
+target		<http://bio2rdf.org/chembl/compound_properties/molregno={compound_properties_molregno}> <http://bio2rdf.org/chembl/compound_properties#ref-molregno> <http://bio2rdf.org/chembl/molecule_dictionary/molregno={molecule_dictionary_molregno}> . 
+source		SELECT "compound_properties"."molregno" AS compound_properties_molregno, "molecule_dictionary"."molregno" AS molecule_dictionary_molregno FROM "compound_properties", "molecule_dictionary" WHERE "compound_properties"."molregno" = "molecule_dictionary"."molregno"
+
+mappingId	MAPPING-ID89
+target		<http://bio2rdf.org/chembl/confidence_score_lookup/confidence_score={confidence_score}> a <http://bio2rdf.org/chembl/confidence_score_lookup> ; <http://bio2rdf.org/chembl/confidence_score_lookup#confidence_score> {confidence_score}^^xsd:integer ; <http://bio2rdf.org/chembl/confidence_score_lookup#description> {description} ; <http://bio2rdf.org/chembl/confidence_score_lookup#target_mapping> {target_mapping} . 
+source		SELECT * FROM "confidence_score_lookup"
+
+mappingId	MAPPING-ID90
+target		<http://bio2rdf.org/chembl/research_companies/co_stem_id={co_stem_id}> a <http://bio2rdf.org/chembl/research_companies> ; <http://bio2rdf.org/chembl/research_companies#co_stem_id> {co_stem_id}^^xsd:integer ; <http://bio2rdf.org/chembl/research_companies#res_stem_id> {res_stem_id}^^xsd:integer ; <http://bio2rdf.org/chembl/research_companies#company> {company} ; <http://bio2rdf.org/chembl/research_companies#country> {country} ; <http://bio2rdf.org/chembl/research_companies#previous_company> {previous_company} . 
+source		SELECT * FROM "research_companies"
+
+mappingId	MAPPING-ID91
+target		<http://bio2rdf.org/chembl/research_companies/co_stem_id={research_companies_co_stem_id}> <http://bio2rdf.org/chembl/research_companies#ref-res_stem_id> <http://bio2rdf.org/chembl/research_stem/res_stem_id={research_stem_res_stem_id}> . 
+source		SELECT "research_companies"."co_stem_id" AS research_companies_co_stem_id, "research_stem"."res_stem_id" AS research_stem_res_stem_id FROM "research_companies", "research_stem" WHERE "research_companies"."res_stem_id" = "research_stem"."res_stem_id"
+
+mappingId	MAPPING-ID92
+target		<http://bio2rdf.org/chembl/target_type/target_type={target_type}> a <http://bio2rdf.org/chembl/target_type> ; <http://bio2rdf.org/chembl/target_type#target_type> {target_type} ; <http://bio2rdf.org/chembl/target_type#target_desc> {target_desc} ; <http://bio2rdf.org/chembl/target_type#parent_type> {parent_type} . 
+source		SELECT * FROM "target_type"
+
+mappingId	MAPPING-ID93
+target		<http://bio2rdf.org/chembl/relationship_type/relationship_type={relationship_type}> a <http://bio2rdf.org/chembl/relationship_type> ; <http://bio2rdf.org/chembl/relationship_type#relationship_type> {relationship_type} ; <http://bio2rdf.org/chembl/relationship_type#relationship_desc> {relationship_desc} . 
+source		SELECT * FROM "relationship_type"
+]]
+
